@@ -39,7 +39,7 @@
     <Param name="elSimMode" updates="None" val="False" valType="bool"/>
     <Param name="elTrackEyes" updates="None" val="RIGHT_EYE" valType="str"/>
     <Param name="elTrackingMode" updates="None" val="PUPIL_CR_TRACKING" valType="str"/>
-    <Param name="expName" updates="None" val="microphone" valType="str"/>
+    <Param name="expName" updates="None" val="HABLA_syllable_B" valType="str"/>
     <Param name="exportHTML" updates="None" val="manually" valType="str"/>
     <Param name="eyetracker" updates="None" val="None" valType="str"/>
     <Param name="gpAddress" updates="None" val="127.0.0.1" valType="str"/>
@@ -202,12 +202,67 @@
         <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
     </Routine>
+    <Routine name="begin">
+      <TextComponent name="text">
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="None" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="name" updates="None" val="text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="3" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Nos apoyarás con un ejercicio de lectura.&amp;#10;Verás aparecer momentáneamente sílabas del castellano o algunas equis (XX) en el centro de&amp;#10;la pantalla. &amp;#10;Cuando las sílabas desaparezcan y veas un + , deberás decir en voz alta lo que has leído" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="num"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="end">
+      <TextComponent name="thanks">
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="None" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="name" updates="None" val="thanks" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Has terminado este ejercicio, &amp;#10;¡Muchas gracias por tu atención!" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="num"/>
+      </TextComponent>
+    </Routine>
   </Routines>
   <Flow>
+    <Routine name="begin"/>
     <LoopInitiator loopType="TrialHandler" name="Syllable">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('elementType', 6), ('token', 'sa')]), OrderedDict([('elementType', 3), ('token', 'ma')]), OrderedDict([('elementType', 2), ('token', 'fe')]), OrderedDict([('elementType', 3), ('token', 'ma')]), OrderedDict([('elementType', 7), ('token', 'bi')]), OrderedDict([('elementType', 3), ('token', 'me')]), OrderedDict([('elementType', 4), ('token', 'ni')]), OrderedDict([('elementType', 2), ('token', 'fa')]), OrderedDict([('elementType', 6), ('token', 'se')]), OrderedDict([('elementType', 6), ('token', 'su')]), OrderedDict([('elementType', 4), ('token', 'ne')]), OrderedDict([('elementType', 7), ('token', 'be')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 2), ('token', 'fi')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 3), ('token', 'mi')]), OrderedDict([('elementType', 4), ('token', 'ne')]), OrderedDict([('elementType', 5), ('token', 'pi')]), OrderedDict([('elementType', 3), ('token', 'mu')]), OrderedDict([('elementType', 5), ('token', 'pe')]), OrderedDict([('elementType', 6), ('token', 'su')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 7), ('token', 'bo')]), OrderedDict([('elementType', 7), ('token', 'bu')]), OrderedDict([('elementType', 3), ('token', 'mu')]), OrderedDict([('elementType', 6), ('token', 'sa')]), OrderedDict([('elementType', 7), ('token', 'bo')]), OrderedDict([('elementType', 6), ('token', 'si')]), OrderedDict([('elementType', 2), ('token', 'fu')]), OrderedDict([('elementType', 2), ('token', 'fa')]), OrderedDict([('elementType', 5), ('token', 'pi')]), OrderedDict([('elementType', 5), ('token', 'pu')]), OrderedDict([('elementType', 7), ('token', 'bu')]), OrderedDict([('elementType', 2), ('token', 'fo')]), OrderedDict([('elementType', 5), ('token', 'po')]), OrderedDict([('elementType', 2), ('token', 'fu')]), OrderedDict([('elementType', 4), ('token', 'nu')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 6), ('token', 'si')]), OrderedDict([('elementType', 6), ('token', 'so')]), OrderedDict([('elementType', 5), ('token', 'pu')]), OrderedDict([('elementType', 4), ('token', 'no')]), OrderedDict([('elementType', 6), ('token', 'se')]), OrderedDict([('elementType', 4), ('token', 'ni')]), OrderedDict([('elementType', 3), ('token', 'mo')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 2), ('token', 'fi')]), OrderedDict([('elementType', 2), ('token', 'fe')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 3), ('token', 'me')]), OrderedDict([('elementType', 7), ('token', 'ba')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 5), ('token', 'po')]), OrderedDict([('elementType', 7), ('token', 'be')]), OrderedDict([('elementType', 5), ('token', 'pa')]), OrderedDict([('elementType', 4), ('token', 'na')]), OrderedDict([('elementType', 4), ('token', 'no')]), OrderedDict([('elementType', 2), ('token', 'fo')]), OrderedDict([('elementType', 7), ('token', 'bi')]), OrderedDict([('elementType', 4), ('token', 'na')]), OrderedDict([('elementType', 7), ('token', 'ba')]), OrderedDict([('elementType', 5), ('token', 'pe')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 3), ('token', 'mo')]), OrderedDict([('elementType', 3), ('token', 'mi')]), OrderedDict([('elementType', 4), ('token', 'nu')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 6), ('token', 'so')]), OrderedDict([('elementType', 5), ('token', 'pa')]), OrderedDict([('elementType', 1), ('token', 'xx')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="1BalancedSyllableSequence.csv" valType="file"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('elementType', 6), ('token', 'se')]), OrderedDict([('elementType', 3), ('token', 'mo')]), OrderedDict([('elementType', 2), ('token', 'fi')]), OrderedDict([('elementType', 3), ('token', 'ma')]), OrderedDict([('elementType', 7), ('token', 'bu')]), OrderedDict([('elementType', 3), ('token', 'me')]), OrderedDict([('elementType', 4), ('token', 'ni')]), OrderedDict([('elementType', 2), ('token', 'fo')]), OrderedDict([('elementType', 6), ('token', 'sa')]), OrderedDict([('elementType', 6), ('token', 'si')]), OrderedDict([('elementType', 4), ('token', 'ne')]), OrderedDict([('elementType', 7), ('token', 'bi')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 2), ('token', 'fe')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 3), ('token', 'mi')]), OrderedDict([('elementType', 4), ('token', 'ne')]), OrderedDict([('elementType', 5), ('token', 'pi')]), OrderedDict([('elementType', 3), ('token', 'mi')]), OrderedDict([('elementType', 5), ('token', 'pa')]), OrderedDict([('elementType', 6), ('token', 'su')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 7), ('token', 'ba')]), OrderedDict([('elementType', 7), ('token', 'bi')]), OrderedDict([('elementType', 3), ('token', 'mo')]), OrderedDict([('elementType', 6), ('token', 'su')]), OrderedDict([('elementType', 7), ('token', 'bo')]), OrderedDict([('elementType', 6), ('token', 'si')]), OrderedDict([('elementType', 2), ('token', 'fu')]), OrderedDict([('elementType', 2), ('token', 'fu')]), OrderedDict([('elementType', 5), ('token', 'pu')]), OrderedDict([('elementType', 5), ('token', 'pi')]), OrderedDict([('elementType', 7), ('token', 'ba')]), OrderedDict([('elementType', 2), ('token', 'fa')]), OrderedDict([('elementType', 5), ('token', 'pe')]), OrderedDict([('elementType', 2), ('token', 'fe')]), OrderedDict([('elementType', 4), ('token', 'no')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 6), ('token', 'so')]), OrderedDict([('elementType', 6), ('token', 'se')]), OrderedDict([('elementType', 5), ('token', 'pu')]), OrderedDict([('elementType', 4), ('token', 'nu')]), OrderedDict([('elementType', 6), ('token', 'so')]), OrderedDict([('elementType', 4), ('token', 'no')]), OrderedDict([('elementType', 3), ('token', 'ma')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 2), ('token', 'fa')]), OrderedDict([('elementType', 2), ('token', 'fo')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 3), ('token', 'me')]), OrderedDict([('elementType', 7), ('token', 'be')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 5), ('token', 'pe')]), OrderedDict([('elementType', 7), ('token', 'bu')]), OrderedDict([('elementType', 5), ('token', 'pa')]), OrderedDict([('elementType', 4), ('token', 'nu')]), OrderedDict([('elementType', 4), ('token', 'ni')]), OrderedDict([('elementType', 2), ('token', 'fi')]), OrderedDict([('elementType', 7), ('token', 'be')]), OrderedDict([('elementType', 4), ('token', 'na')]), OrderedDict([('elementType', 7), ('token', 'bo')]), OrderedDict([('elementType', 5), ('token', 'po')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 3), ('token', 'mu')]), OrderedDict([('elementType', 3), ('token', 'mu')]), OrderedDict([('elementType', 4), ('token', 'na')]), OrderedDict([('elementType', 1), ('token', 'xx')]), OrderedDict([('elementType', 6), ('token', 'sa')]), OrderedDict([('elementType', 5), ('token', 'po')]), OrderedDict([('elementType', 1), ('token', 'xx')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="2BalancedSyllableSequence.csv" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
@@ -217,5 +272,6 @@
     </LoopInitiator>
     <Routine name="proseRecord"/>
     <LoopTerminator name="Syllable"/>
+    <Routine name="end"/>
   </Flow>
 </PsychoPy2experiment>
