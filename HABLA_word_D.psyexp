@@ -66,13 +66,13 @@
     <Routine name="proseRecord">
       <MicrophoneComponent name="mic">
         <Param name="channels" updates="None" val="mono" valType="str"/>
-        <Param name="device" updates="None" val="C-Media(R) Audio: USB Audio (hw:2,0)" valType="str"/>
+        <Param name="device" updates="None" val="default" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="maxSize" updates="None" val="480000" valType="num"/>
         <Param name="name" updates="None" val="mic" valType="code"/>
         <Param name="outputType" updates="None" val="wav" valType="code"/>
-        <Param name="sampleRate" updates="None" val="CD Audio (44.1kHz)" valType="num"/>
+        <Param name="sampleRate" updates="None" val="DVD Audio (48kHz)" valType="num"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="speakTimes" updates="None" val="True" valType="bool"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
@@ -224,7 +224,7 @@
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="3" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Nos apoyarás con un ejercicio de lectura.&amp;#10;Verás aparecer momentáneamente palabras del castellano o algunas equis (XX) en el centro de&amp;#10;la pantalla. &amp;#10;Cuando las sílabas desaparezcan y veais un + , decir en voz alta lo que has leído" valType="str"/>
+        <Param name="text" updates="constant" val="Palabras" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
