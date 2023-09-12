@@ -66,13 +66,13 @@
     <Routine name="proseRecord">
       <MicrophoneComponent name="mic">
         <Param name="channels" updates="None" val="mono" valType="str"/>
-        <Param name="device" updates="None" val="C-Media(R) Audio: USB Audio (hw:2,0)" valType="str"/>
+        <Param name="device" updates="None" val="default" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="maxSize" updates="None" val="480000" valType="num"/>
         <Param name="name" updates="None" val="mic" valType="code"/>
         <Param name="outputType" updates="None" val="wav" valType="code"/>
-        <Param name="sampleRate" updates="None" val="CD Audio (44.1kHz)" valType="num"/>
+        <Param name="sampleRate" updates="None" val="DVD Audio (48kHz)" valType="num"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="speakTimes" updates="None" val="True" valType="bool"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
