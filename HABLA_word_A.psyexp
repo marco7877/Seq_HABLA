@@ -221,38 +221,31 @@
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
         <Param name="stopVal" updates="constant" val="3" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Palabras" valType="str"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
-      <TextComponent name="text_2">
-        <Param name="color" updates="constant" val="white" valType="color"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="contrast" updates="constant" val="1" valType="num"/>
+      <KeyboardComponent name="key_resp">
+        <Param name="allowedKeys" updates="constant" val="'s'" valType="list"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="None" valType="str"/>
-        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
-        <Param name="name" updates="None" val="text_2" valType="code"/>
-        <Param name="opacity" updates="constant" val="" valType="num"/>
-        <Param name="ori" updates="constant" val="0" valType="num"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp" valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="3" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="1" valType="code"/>
-        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="¿Preparado?&amp;#10;¡Vamos a empezar!" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="num"/>
-      </TextComponent>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
     </Routine>
     <Routine name="end">
       <TextComponent name="thanks">
@@ -281,9 +274,64 @@
         <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
     </Routine>
+    <Routine name="lag">
+      <PolygonComponent name="timer_2">
+        <Param name="anchor" updates="constant" val="center" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="fillColor" updates="constant" val="white" valType="color"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="lineColor" updates="constant" val="white" valType="color"/>
+        <Param name="lineWidth" updates="constant" val="1" valType="num"/>
+        <Param name="nVertices" updates="constant" val="4" valType="int"/>
+        <Param name="name" updates="None" val="timer_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="pos" updates="constant" val="(-1, -1)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="shape" updates="None" val="custom polygon..." valType="str"/>
+        <Param name="size" updates="set every frame" val="(t/10, 0.2)" valType="list"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="20" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="norm" valType="str"/>
+        <Param name="vertices" updates="constant" val="[[0, 0.5],[0, -0.5],[1, -0.5],[1, 0.5]]" valType="list"/>
+      </PolygonComponent>
+      <TextComponent name="text_2">
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="None" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="name" updates="None" val="text_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="20" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="+" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="num"/>
+      </TextComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="begin"/>
+    <Routine name="lag"/>
     <LoopInitiator loopType="TrialHandler" name="word">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="[OrderedDict([('elementType', 6), ('token', 'violín'), ('sem', 2)]), OrderedDict([('elementType', 3), ('token', 'nectarina'), ('sem', 7)]), OrderedDict([('elementType', 2), ('token', 'muñeco'), ('sem', 6)]), OrderedDict([('elementType', 3), ('token', 'neceser'), ('sem', 8)]), OrderedDict([('elementType', 7), ('token', 'xxxxxx'), ('sem', 0)]), OrderedDict([('elementType', 3), ('token', 'nevera'), ('sem', 8)]), OrderedDict([('elementType', 4), ('token', 'setas'), ('sem', 11)]), OrderedDict([('elementType', 2), ('token', 'monitor'), ('sem', 6)]), OrderedDict([('elementType', 6), ('token', 'vinagre'), ('sem', 1)]), OrderedDict([('elementType', 6), ('token', 'bacalao'), ('sem', 1)]), OrderedDict([('elementType', 4), ('token', 'sartén'), ('sem', 12)]), OrderedDict([('elementType', 7), ('token', 'xxxxxxxx'), ('sem', 0)]), OrderedDict([('elementType', 1), ('token', 'pavo'), ('sem', 9)]), OrderedDict([('elementType', 2), ('token', 'mazapán'), ('sem', 5)]), OrderedDict([('elementType', 1), ('token', 'palillo'), ('sem', 10)]), OrderedDict([('elementType', 3), ('token', 'nata'), ('sem', 7)]), OrderedDict([('elementType', 4), ('token', 'soga'), ('sem', 12)]), OrderedDict([('elementType', 5), ('token', 'funda'), ('sem', 4)]), OrderedDict([('elementType', 3), ('token', 'nudo'), ('sem', 8)]), OrderedDict([('elementType', 5), ('token', 'farol'), ('sem', 4)]), OrderedDict([('elementType', 6), ('token', 'bolígafo'), ('sem', 2)]), OrderedDict([('elementType', 1), ('token', 'pollo'), ('sem', 9)]), OrderedDict([('elementType', 7), ('token', 'xxxxxxxxxxx'), ('sem', 0)]), OrderedDict([('elementType', 7), ('token', 'xxxxx'), ('sem', 0)]), OrderedDict([('elementType', 3), ('token', 'navaja'), ('sem', 8)]), OrderedDict([('elementType', 6), ('token', 'bombilla'), ('sem', 2)]), OrderedDict([('elementType', 7), ('token', 'xxxxxx'), ('sem', 0)]), OrderedDict([('elementType', 6), ('token', 'boina'), ('sem', 2)]), OrderedDict([('elementType', 2), ('token', 'mango'), ('sem', 5)]), OrderedDict([('elementType', 2), ('token', 'manguera'), ('sem', 6)]), OrderedDict([('elementType', 5), ('token', 'fabada'), ('sem', 3)]), OrderedDict([('elementType', 5), ('token', 'ficha'), ('sem', 4)]), OrderedDict([('elementType', 7), ('token', 'xxxx'), ('sem', 0)]), OrderedDict([('elementType', 2), ('token', 'martillo'), ('sem', 6)]), OrderedDict([('elementType', 5), ('token', 'fideos'), ('sem', 3)]), OrderedDict([('elementType', 2), ('token', 'manzana'), ('sem', 5)]), OrderedDict([('elementType', 4), ('token', 'sandía'), ('sem', 11)]), OrderedDict([('elementType', 1), ('token', 'paella'), ('sem', 9)]), OrderedDict([('elementType', 6), ('token', 'bocadillo'), ('sem', 1)]), OrderedDict([('elementType', 6), ('token', 'bizcocho'), ('sem', 1)]), OrderedDict([('elementType', 5), ('token', 'filete'), ('sem', 3)]), OrderedDict([('elementType', 4), ('token', 'sobre'), ('sem', 12)]), OrderedDict([('elementType', 6), ('token', 'balde'), ('sem', 2)]), OrderedDict([('elementType', 4), ('token', 'sable'), ('sem', 12)]), OrderedDict([('elementType', 3), ('token', 'naranja'), ('sem', 7)]), OrderedDict([('elementType', 1), ('token', 'pala'), ('sem', 10)]), OrderedDict([('elementType', 2), ('token', 'mantequilla'), ('sem', 5)]), OrderedDict([('elementType', 2), ('token', 'máscara'), ('sem', 6)]), OrderedDict([('elementType', 1), ('token', 'pincel'), ('sem', 10)]), OrderedDict([('elementType', 3), ('token', 'nuez'), ('sem', 7)]), OrderedDict([('elementType', 7), ('token', 'xxxxxxxx'), ('sem', 0)]), OrderedDict([('elementType', 1), ('token', 'paraguas'), ('sem', 10)]), OrderedDict([('elementType', 5), ('token', 'filtro'), ('sem', 4)]), OrderedDict([('elementType', 7), ('token', 'xxxxxxx'), ('sem', 0)]), OrderedDict([('elementType', 5), ('token', 'fúsil'), ('sem', 4)]), OrderedDict([('elementType', 4), ('token', 'salmón'), ('sem', 11)]), OrderedDict([('elementType', 4), ('token', 'sopa'), ('sem', 11)]), OrderedDict([('elementType', 2), ('token', 'melón'), ('sem', 5)]), OrderedDict([('elementType', 7), ('token', 'xxxx'), ('sem', 0)]), OrderedDict([('elementType', 4), ('token', 'salchicha'), ('sem', 11)]), OrderedDict([('elementType', 7), ('token', 'xxxxx'), ('sem', 0)]), OrderedDict([('elementType', 5), ('token', 'fondúe'), ('sem', 3)]), OrderedDict([('elementType', 1), ('token', 'paletilla'), ('sem', 9)]), OrderedDict([('elementType', 3), ('token', 'naipes'), ('sem', 8)]), OrderedDict([('elementType', 3), ('token', 'nachos'), ('sem', 7)]), OrderedDict([('elementType', 4), ('token', 'sello'), ('sem', 12)]), OrderedDict([('elementType', 1), ('token', 'pañuelo'), ('sem', 10)]), OrderedDict([('elementType', 6), ('token', 'bombón'), ('sem', 1)]), OrderedDict([('elementType', 5), ('token', 'fajitas'), ('sem', 3)]), OrderedDict([('elementType', 1), ('token', 'pasas'), ('sem', 9)])]" valType="str"/>
